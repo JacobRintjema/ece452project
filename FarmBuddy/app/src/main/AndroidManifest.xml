@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +14,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FarmBuddy"
         tools:targetApi="31">
+        <service
+            android:name=".ui.charitymode.CharityModeIntentService"
+            android:exported="false"></service>
+        <service
+            android:name=".ui.marketmode.MarketModeIntentService"
+            android:exported="false" />
+        <service
+            android:name=".ui.homemode.HomeModeIntentService"
+            android:exported="false" />
+        <service
+            android:name=".ui.farmmode.FarmModeIntentService"
+            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
