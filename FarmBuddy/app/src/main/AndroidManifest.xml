@@ -21,6 +21,9 @@
             android:name=".ui.marketmode.MarketModeIntentService"
             android:exported="false" />
         <service
+             android:name=".ui.homemode.HomeModeIntentService"
+             android:exported="false" />
+        <service
             android:name=".ui.farmmode.FarmModeIntentService"
             android:exported="false" />
 
