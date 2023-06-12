@@ -1,32 +1,42 @@
 package com.example.farmbuddy.ui.homemode
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.farmbuddy.R
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.example.farmbuddy.databinding.FragmentHomeModeBinding
 
 class HomeModeFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = HomeModeFragment()
-    }
+    private var _binding: FragmentHomeModeBinding? = null
 
-    private lateinit var viewModel: HomeModeViewModel
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_home_mode, container, false)
+    ): View {
+        val homeModeViewModel =
+            ViewModelProvider(this).get(HomeModeViewModel::class.java)
+
+        _binding = FragmentHomeModeBinding.inflate(inflater, container, false)
+        val root: View = binding.root
+
+        val textView: TextView = binding.textHomeMode
+        homeModeViewModel.text.observe(viewLifecycleOwner) {
+            textView.text = it
+        }
+        return root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(HomeModeViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
-
 }
