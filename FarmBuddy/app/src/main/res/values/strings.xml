@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">FarmBuddy</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="farm_mode">Farm Mode</string>
+    <string name="charity_mode">Charity Mode</string>
+    <string name="market_mode">Market Mode</string>
+    <string name="home_mode">Home Mode</string>
 </resources>
