@@ -41,13 +41,13 @@ class LoginActivity : AppCompatActivity() {
 
         //check if null
         if (email.text.isEmpty() || password.text.isEmpty()){
-            Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
             return
         }
         auth.signInWithEmailAndPassword(emailInput, passwordInput)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, then proceed to Main Activity
+                    // Sign in success, then proceed to Main Activity and display success message
                     val intent = Intent(this,MainActivity::class.java)
                     startActivity(intent)
 
@@ -57,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT,
                     ).show()
                 } else {
-                    // If sign in fails, display a message to the user.
+                    // If sign in fails, display a error message to the user.
                     Toast.makeText(
                         baseContext,
                         "Authentication failed.",

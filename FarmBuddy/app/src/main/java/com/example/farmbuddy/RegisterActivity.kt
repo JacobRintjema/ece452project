@@ -42,25 +42,23 @@ class RegisterActivity : AppCompatActivity() {
             val inputPassword = password.text.toString()
 
             if(email.text.isEmpty() || password.text.isEmpty()){
-                Toast.makeText(this,"Please fill all fields", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Please fill in all fields", Toast.LENGTH_SHORT).show()
                 return
             }
 
             auth.createUserWithEmailAndPassword(inputEmail, inputPassword)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-                        // Sign in success, go to Main activity
+                        // registered success, go to Main activity and display success message
                         val intent = Intent(this,MainActivity::class.java)
                         startActivity(intent)
-
                         Toast.makeText(
                             baseContext,
                             "Success.",
                             Toast.LENGTH_SHORT,
                         ).show()
-
                     } else {
-                        // If sign in fails, display a message to the user.
+                        // If sign in fails, display an error message to the user.
                         Toast.makeText(
                             baseContext,
                             "Authentication failed.",
@@ -73,3 +71,4 @@ class RegisterActivity : AppCompatActivity() {
                 }
         }
 }
+//reference: https://firebase.google.com/docs/auth/android/start
