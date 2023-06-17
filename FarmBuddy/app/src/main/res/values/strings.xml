@@ -4,4 +4,5 @@
     <string name="charity_mode">Charity Mode</string>
     <string name="market_mode">Market Mode</string>
     <string name="home_mode">Home Mode</string>
+    <string name="title_activity_sign_in">activity_sign_in</string>
 </resources>

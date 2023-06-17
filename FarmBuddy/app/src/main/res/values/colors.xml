@@ -10,4 +10,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="farm_yellow">#A3842C</color>
     <color name="farm_yellow_dark">#8f7427</color>
+    <color name="farm_green">#575200</color>
+    <color name="farm_green_dark">#423E00</color>
 </resources>
