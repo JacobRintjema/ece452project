@@ -1,13 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.productview.ProductViewFragment">
 
     <TextView
+        android:id="@+id/text_market_mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:text="On Market"
+        />
+    
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_below="@id/text_market_mode">
 
-</FrameLayout>
+
+        <TableRow
+            android:background="@color/farm_green"
+            >
+            <TextView></TextView>
+
+        </TableRow>
+
+
+
+
+    </TableLayout>
+
+
+    
+
+</RelativeLayout>
