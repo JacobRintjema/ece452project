@@ -1,12 +1,15 @@
 package com.example.farmbuddy.ui.marketmode
 
-import androidx.lifecycle.ViewModelProvider
+import android.R
+import android.app.Activity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil.setContentView
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.farmbuddy.databinding.FragmentMarketModeBinding
 
 class MarketModeFragment : Fragment() {
@@ -28,23 +31,26 @@ class MarketModeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(MarketModeViewModel::class.java)
+        val marketModeViewModel = ViewModelProvider(this).get(MarketModeViewModel::class.java)
 
         _binding = FragmentMarketModeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textMarketMode
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MarketModeViewModel::class.java)
-        // TODO: Use the ViewModel
+
+        // Bind fragment_market_mode.xml's recycler
+        val recyclerUI = binding.marketsMain
+        binding.marketsMain.adapter = MarketAdapter(MarketData.markets)
     }
 
     override fun onDestroyView() {
