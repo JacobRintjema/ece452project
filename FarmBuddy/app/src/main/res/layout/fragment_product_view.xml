@@ -14,26 +14,66 @@
         android:layout_marginEnd="8dp"
         android:textColor="@color/black"
         android:textSize="40sp"
+        />
+
+    <TextView
+        android:id="@+id/on_market"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_market_mode"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:text="On Market"
         />
-    
+
+    <ImageView
+        android:id="@+id/img_add"
+        android:layout_centerInParent="true"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Speech to text"
+        android:src="@drawable/ic_addition"
+        />
+    <ImageView
+        android:id="@+id/img_remove"
+        android:layout_centerInParent="true"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Speech to text"
+        android:src="@drawable/ic_remove"
+        android:layout_toLeftOf="@+id/img_add"
+        />
+
     <TableLayout
+        android:id="@+id/market_table"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/text_market_mode">
-
-
-        <TableRow
-            android:background="@color/farm_green"
-            >
-            <TextView></TextView>
-
-        </TableRow>
-
-
-
+        android:layout_below="@id/text_market_mode"
+        >
 
     </TableLayout>
+
+    <EditText
+        android:id="@+id/txtdoctor"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:background="@drawable/rounded_edit_text"
+        android:layout_below="@+id/text_market_mode"
+        android:layout_toRightOf="@id/on_market">
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/txtdoctor"
+        android:layout_below="@+id/text_market_mode"
+        android:textSize="20sp"
+        android:text="SUBMIT"
+        >
+
+    </Button>
 
 
     
