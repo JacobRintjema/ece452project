@@ -28,4 +28,11 @@
         android:name="com.example.farmbuddy.ui.marketmode.MarketModeFragment"
         android:label="@string/market_mode"
         tools:layout="@layout/fragment_market_mode" />
+
+    <fragment
+        android:id="@+id/navigation_product_view"
+        android:name="com.example.farmbuddy.ui.productview.ProductViewFragment"
+        android:label="@string/product_view"
+        tools:layout="@layout/fragment_product_view" />
+
 </navigation>
