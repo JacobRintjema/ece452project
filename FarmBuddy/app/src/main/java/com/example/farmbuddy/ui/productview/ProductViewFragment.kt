@@ -68,16 +68,16 @@ class ProductViewFragment : Fragment() {
             val product_cost = TextView(activity)
             market_name.text = user_input.text.toString()
             market_name.textSize = 20f
-            market_name.setPadding(8, 8, 8, 8)
+            market_name.setPadding(5, 5, 5, 5)
             market_num.text = "Market_"+(table.size+1).toString()
             market_num.textSize = 20f
-            market_num.setPadding(8, 8, 8, 8)
+            market_num.setPadding(5, 5, 5, 5)
             product_num.textSize = 20f
             product_num.text = "1"
-            product_num.setPadding(8, 8, 8, 8)
+            product_num.setPadding(5, 5, 5, 5)
             product_cost.textSize = 20f
             product_cost.text = "$50"
-            product_cost.setPadding(8, 8, 8, 8)
+            product_cost.setPadding(5, 5, 5, 5)
 
             val add = ImageView(activity)
             val add_uri = "@drawable/ic_addition"
