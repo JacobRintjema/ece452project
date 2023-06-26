@@ -9,12 +9,11 @@
 
     <ImageView
         android:id="@+id/img_mic"
-        android:layout_centerInParent="true"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:text="Speech to text"
+        android:layout_centerInParent="true"
         android:src="@drawable/ic_mic"
-/>
+        android:text="Speech to text" />
 
     <TextView
         android:id="@+id/tv_text"
