@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,17 +13,34 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:textColor="@color/black"
+        android:textColor="@color/farm_yellow_dark"
         android:textSize="40sp"
-        />
+        app:layout_constraintEnd_toStartOf="@+id/market_table"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_mic"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_mic"
+        android:text="Speech to text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/on_market"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/img_mic"
-        android:textColor="@color/black"
-        android:textSize="20sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/farm_yellow_dark"
+        app:layout_constraintTop_toBottomOf="@+id/img_mic"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="30sp"
         android:text="On Market"
         />
 
@@ -30,43 +48,40 @@
     <TableLayout
         android:id="@+id/market_table"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/submit_button"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/submit_button"
+        app:layout_constraintStart_toStartOf="parent"
         >
 
     </TableLayout>
 
+
     <EditText
         android:id="@+id/text_box"
         android:layout_width="200dp"
-        android:layout_height="30dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/rounded_edit_text"
-        android:layout_below="@+id/img_mic"
-        android:layout_toRightOf="@id/on_market">
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/on_market">
+
         <requestFocus />
     </EditText>
 
     <Button
         android:id="@+id/submit_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/text_box"
-        android:layout_below="@+id/img_mic"
-        android:textSize="20sp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:text="SUBMIT"
-        >
-    </Button>
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/on_market"></Button>
 
-    <ImageView
-        android:id="@+id/img_mic"
-        android:layout_below="@id/text_market_mode"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:text="Speech to text"
-        android:src="@drawable/ic_mic"
-        />
-
-
-    
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
