@@ -23,5 +23,25 @@ class ProductViewModel : ViewModel() {
     }
     val textUnits: LiveData<String> = _textUnits
 
+    private val _textMarket = MutableLiveData<String>().apply {
+        value = "St.Jacob's Market"
+
+    }
+    val textMarket: LiveData<String> = _textMarket
+
+    private val _textPrice = MutableLiveData<String>().apply {
+        value = "$100"
+
+    }
+    val textPrice: LiveData<String> = _textPrice
+
+    private val _textWeight = MutableLiveData<String>().apply {
+        value = "50 lbs"
+
+    }
+    val textWeight: LiveData<String> = _textWeight
+
+
+
     // TODO: Implement the ViewModel
 }

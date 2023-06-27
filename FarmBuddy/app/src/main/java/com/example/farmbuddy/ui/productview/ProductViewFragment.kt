@@ -58,6 +58,19 @@ class ProductViewFragment : Fragment() {
         productViewModel.textUnits.observe(viewLifecycleOwner) {
             textView3.text = it
         }
+
+        val textView4 : TextView = binding.textMarket
+        productViewModel.textMarket.observe(viewLifecycleOwner) {
+            textView4.text = it
+        }
+        val textView5 : TextView = binding.textPrice
+        productViewModel.textPrice.observe(viewLifecycleOwner) {
+            textView5.text = it
+        }
+        val textView6 : TextView = binding.textWeight
+        productViewModel.textWeight.observe(viewLifecycleOwner) {
+            textView6.text = it
+        }
         return root
     }
 
@@ -79,8 +92,7 @@ class ProductViewFragment : Fragment() {
             market_name.text = user_input.text.toString()
             market_name.textSize = 20f
             market_name.setPadding(8, 8, 8, 8)
-//            market_num.text = "Market_" + (table.size + 1).toString()
-            market_num.text = "Market "
+            market_num.text = "Market_" + (table.size + 1).toString()
             market_num.textSize = 20f
             market_num.setPadding(8, 8, 8, 8)
             product_num.textSize = 20f
@@ -117,8 +129,7 @@ class ProductViewFragment : Fragment() {
                         var row = table.getChildAt(i) as TableRow
                         val market_view = row.get(0) as TextView
                         val market_num = Integer.parseInt((market_view).text.substring(7)) - 1
-//                        market_view.text = "Market_" + market_num.toString()
-                        market_view.text = "Market "
+                        market_view.text = "Market_" + market_num.toString()
                     }
                 }
             }
@@ -130,71 +141,6 @@ class ProductViewFragment : Fragment() {
             tr.addView(add)
             tr.addView(remove)
             table.addView(tr)
-        }
-
-
-        val tableTransaction = binding.transactionTable
-        val submitTransaction = binding.submitButtonTransaction
-        val user_input_transaction = binding.textBoxTransaction
-        submitTransaction.setOnClickListener {
-            val tr = TableRow(activity)
-            val market_name = TextView(activity)
-            val market_num = TextView(activity)
-            val product_num = TextView(activity)
-            val product_cost = TextView(activity)
-            market_name.text = user_input_transaction.text.toString()
-            market_name.textSize = 20f
-            market_name.setPadding(8, 8, 8, 8)
-//            market_num.text = "Market_"+(table.size+1).toString()
-            market_num.text = "Market "
-            market_num.textSize = 20f
-            market_num.setPadding(8, 8, 8, 8)
-            product_num.textSize = 20f
-            product_num.text = "1"
-            product_num.setPadding(8, 8, 8, 8)
-            product_cost.textSize = 20f
-            product_cost.text = "$50"
-            product_cost.setPadding(8, 8, 8, 8)
-
-            val add = ImageView(activity)
-            val add_uri = "@drawable/ic_addition"
-            val add_imageResource = resources.getIdentifier(add_uri,null,activity?.packageName)
-            val add_res = resources.getDrawable(add_imageResource)
-
-            add.setImageDrawable(add_res)
-            add.setOnClickListener {
-                val current_val = Integer.parseInt(product_num.text.toString())
-                product_num.text = (current_val + 1).toString()
-            }
-
-            val remove = ImageView(activity)
-            val remove_uri = "@drawable/ic_remove"
-            val remove_imageResource = resources.getIdentifier(remove_uri,null,activity?.packageName)
-            val remove_res = resources.getDrawable(remove_imageResource)
-
-            remove.setImageDrawable(remove_res)
-            remove.setOnClickListener {
-                val current_val = Integer.parseInt(product_num.text.toString())
-                product_num.text = (current_val - 1).toString()
-                if (Integer.parseInt(product_num.text.toString()) <= 0) {
-                    table.removeView(tr)
-                    for (i in Integer.parseInt(market_num.text.substring(7))-1 until table.childCount) {
-                        var row = table.getChildAt(i) as TableRow
-                        val market_view = row.get(0) as TextView
-                        val market_num_transaction = Integer.parseInt((market_view).text.substring(7)) - 1
-//                        market_view.text = "Market_"+ market_num_transaction.toString()
-                        market_view.text = "Market "
-                    }
-                }
-            }
-
-            tr.addView(market_num)
-            tr.addView(market_name)
-            tr.addView(product_num)
-            tr.addView(product_cost)
-            tr.addView(add)
-            tr.addView(remove)
-            tableTransaction.addView(tr)
         }
 
         val mic = binding.imgMic
@@ -276,8 +222,7 @@ class ProductViewFragment : Fragment() {
                                         val market_view = row.get(0) as TextView
                                         val market_num =
                                             Integer.parseInt((market_view).text.substring(7)) - 1
-//                                        market_view.text = "Market_" + market_num.toString()
-                                        market_view.text = "Market "
+                                        market_view.text = "Market_" + market_num.toString()
                                     }
                                 } else {
                                     stock_view.text = new_stock.toString()
