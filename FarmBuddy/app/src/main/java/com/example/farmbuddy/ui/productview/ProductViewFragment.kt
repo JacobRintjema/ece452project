@@ -79,7 +79,8 @@ class ProductViewFragment : Fragment() {
             market_name.text = user_input.text.toString()
             market_name.textSize = 20f
             market_name.setPadding(8, 8, 8, 8)
-            market_num.text = "Market_" + (table.size + 1).toString()
+//            market_num.text = "Market_" + (table.size + 1).toString()
+            market_num.text = "Market "
             market_num.textSize = 20f
             market_num.setPadding(8, 8, 8, 8)
             product_num.textSize = 20f
@@ -116,7 +117,8 @@ class ProductViewFragment : Fragment() {
                         var row = table.getChildAt(i) as TableRow
                         val market_view = row.get(0) as TextView
                         val market_num = Integer.parseInt((market_view).text.substring(7)) - 1
-                        market_view.text = "Market_" + market_num.toString()
+//                        market_view.text = "Market_" + market_num.toString()
+                        market_view.text = "Market "
                     }
                 }
             }
@@ -143,7 +145,8 @@ class ProductViewFragment : Fragment() {
             market_name.text = user_input_transaction.text.toString()
             market_name.textSize = 20f
             market_name.setPadding(8, 8, 8, 8)
-            market_num.text = "Market_"+(table.size+1).toString()
+//            market_num.text = "Market_"+(table.size+1).toString()
+            market_num.text = "Market "
             market_num.textSize = 20f
             market_num.setPadding(8, 8, 8, 8)
             product_num.textSize = 20f
@@ -178,8 +181,9 @@ class ProductViewFragment : Fragment() {
                     for (i in Integer.parseInt(market_num.text.substring(7))-1 until table.childCount) {
                         var row = table.getChildAt(i) as TableRow
                         val market_view = row.get(0) as TextView
-                        val market_num = Integer.parseInt((market_view).text.substring(7)) - 1
-                        market_view.text = "Market_"+ market_num.toString()
+                        val market_num_transaction = Integer.parseInt((market_view).text.substring(7)) - 1
+//                        market_view.text = "Market_"+ market_num_transaction.toString()
+                        market_view.text = "Market "
                     }
                 }
             }
@@ -268,10 +272,12 @@ class ProductViewFragment : Fragment() {
                                     table.removeView(table_row)
                                     for (i in Integer.parseInt(market_num.text.substring(7)) - 1 until table.childCount) {
                                         var row = table.getChildAt(i) as TableRow
+
                                         val market_view = row.get(0) as TextView
                                         val market_num =
                                             Integer.parseInt((market_view).text.substring(7)) - 1
-                                        market_view.text = "Market_" + market_num.toString()
+//                                        market_view.text = "Market_" + market_num.toString()
+                                        market_view.text = "Market "
                                     }
                                 } else {
                                     stock_view.text = new_stock.toString()
