@@ -48,6 +48,16 @@ class ProductViewFragment : Fragment() {
         productViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+        val textView2 : TextView = binding.quantity
+        productViewModel.textQuantity.observe(viewLifecycleOwner) {
+            textView2.text = it
+        }
+
+        val textView3 : TextView = binding.unit
+        productViewModel.textUnits.observe(viewLifecycleOwner) {
+            textView3.text = it
+        }
         return root
     }
 
